@@ -1,3 +1,7 @@
+[Working CloudFront distribution link](https://d3v9h4ir8g9y77.cloudfront.net). The app is properly loaded.
+
+[Not working website link](https://shopdeploymentstack-shopbucket86a369b0-npraerqqx5ux.s3.eu-west-1.amazonaws.com/index.html). There is the 'Access denied' error as it should be.
+
 # React-shop-cloudfront
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
