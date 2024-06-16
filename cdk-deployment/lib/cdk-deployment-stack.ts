@@ -14,7 +14,6 @@ export class ShopDeploymentStack extends cdk.Stack {
     super(scope, id, props);
 
     const bucket = new Bucket(this, "ShopBucket", {
-      versioned: true,
       removalPolicy: cdk.RemovalPolicy.DESTROY,
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
       autoDeleteObjects: true,
