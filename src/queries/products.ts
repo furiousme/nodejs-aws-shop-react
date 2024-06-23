@@ -48,8 +48,10 @@ export function useRemoveProductCache() {
 
 export function useUpsertAvailableProduct() {
   return useMutation((values: AvailableProduct) =>
-    axios.put<AvailableProduct>(`${API_PATHS.bff}/product`, values, {
+    axios.post<AvailableProduct>(`${API_PATHS.product}/products`, values, {
       headers: {
+        "content-type" : "application/json",
+        "Accept": "*",
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
     })
