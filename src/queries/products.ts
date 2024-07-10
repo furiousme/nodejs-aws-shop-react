@@ -9,7 +9,14 @@ export function useAvailableProducts() {
     "available-products",
     async () => {
       const res = await axios.get<AvailableProduct[]>(
-        `${API_PATHS.product}/products`
+        `${API_PATHS.product}/products`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem(
+              "bearer_authorization_token"
+            )}`,
+          },
+        }
       );
       return res.data;
     }
@@ -50,8 +57,8 @@ export function useUpsertAvailableProduct() {
   return useMutation((values: AvailableProduct) =>
     axios.post<AvailableProduct>(`${API_PATHS.product}/products`, values, {
       headers: {
-        "content-type" : "application/json",
-        "Accept": "*",
+        "content-type": "application/json",
+        Accept: "*",
         Authorization: `Basic ${localStorage.getItem("authorization_token")}`,
       },
     })

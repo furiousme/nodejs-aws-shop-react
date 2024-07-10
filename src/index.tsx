@@ -34,17 +34,10 @@ if (import.meta.env.DEV) {
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    console.log("ERROR", { error });
     const responseStatus = error.response.status;
 
-    console.log("STATUS", responseStatus);
-
-    if (responseStatus === 400) {
-      alert(error.response?.data?.data);
-    }
-
     if (responseStatus === 401) {
-      toast.error("Please, log in to make this action", toastProps);
+      toast.error("Please, log in to get full access", toastProps);
     }
 
     if (responseStatus === 403) {
