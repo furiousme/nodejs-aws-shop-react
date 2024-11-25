@@ -68,7 +68,7 @@ export class ShopDeploymentStack extends cdk.Stack {
     });
 
     new cdk.CfnOutput(this, "DistributionUrl", {
-      value: distribution.distributionDomainName
+      value: distribution.distributionDomainName,
     });
   }
 }
